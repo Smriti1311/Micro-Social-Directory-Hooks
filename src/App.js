@@ -1,12 +1,23 @@
-
-import './App.css';
-import FetchData from './Components/FecthData/FetchData';
+import React from 'react';
+import './App.scss';
+import {Route, Switch} from 'react-router';
+import UserList from './Components/FecthData/UserList';
+import UserDetails from './Components/FecthData/UserDetails';
 
 function App() {
   return (
-    <div className="App">
-     <FetchData />
-    </div>
+    <>
+    <header className='Container mt-3 pl-2'>
+        My App
+      </header>
+      <Switch>
+        <Route exact path='/' component={UserList} />
+        <Route path='/userDetails/:phoneNum' component={UserDetails} />
+      </Switch>
+      <footer className='Footer mt-3' >
+        Copyright
+      </footer>
+    </>
   );
 }
 
